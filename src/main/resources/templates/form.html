@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ValidateInfo</title>
+    <link th:href="@{/form-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Javagram</h2>
+    <form method="post" th:action="@{/handleSubmit}">
+        <p style="color:red" th:errors="${user.firstName}"></p>
+        <input type="text" placeholder="First Name" th:field="${user.firstName}">
+        <p style="color:red" th:errors="${user.lastName}"></p>
+        <input type="text" placeholder="Last Name" th:field="${user.lastName}">
+        <p style="color:red" th:errors="${user.userName}"></p>
+        <input type="text" placeholder="Username" th:field="${user.userName}">
+        <p style="color:red" th:errors="${user.email}"></p>
+        <input type="text" placeholder="Email" th:field="${user.email}">
+        <p style="font-weight: bold" >Date of Birth</p>
+        <p style="color:red" th:errors="${user.dateOfBirth}"></p>
+        <input type="date" id="orderDate" th:field="${user.dateOfBirth}"> <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
