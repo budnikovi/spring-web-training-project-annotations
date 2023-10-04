@@ -13,6 +13,7 @@ import java.util.Date;
 
 @Getter
 @Setter
+@NameMatch
 public class User {
     @NotBlank(message = "First name cannot be blank")
     @Size(min = 2, message = "First name must be at least 2 character length")

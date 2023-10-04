@@ -9,9 +9,10 @@
 <div class="container">
     <h2>Javagram</h2>
     <form method="post" th:action="@{/handleSubmit}">
-        <p style="color:red" th:errors="${user.firstName}"></p>
+        <p th:if="${#fields.hasErrors('user')}" style="color:red" th:errors="${user}"></p>
+        <p th:if="${not #fields.hasErrors('user')}" style="color:red" th:errors="${user.firstName}"></p>
         <input type="text" placeholder="First Name" th:field="${user.firstName}">
-        <p style="color:red" th:errors="${user.lastName}"></p>
+        <p th:if="${not #fields.hasErrors('user')}" style="color:red" th:errors="${user.lastName}"></p>
         <input type="text" placeholder="Last Name" th:field="${user.lastName}">
         <p style="color:red" th:errors="${user.userName}"></p>
         <input type="text" placeholder="Username" th:field="${user.userName}">
